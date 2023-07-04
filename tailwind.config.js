@@ -12,6 +12,10 @@ export default {
         mid: "#2d3a3a",
         mainGreen: "#2ba84a",
         sideGreen: "#248232",
+      },
+      fontFamily: {
+        lato: "'Lato', sans-serif",
+
       }
     },
   },

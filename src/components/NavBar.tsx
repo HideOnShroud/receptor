@@ -6,9 +6,9 @@ import hamburgClose from '../assets/hamburger-close.svg'
 
 const NavBar = () => {
     const navigation = [
-        { id: 0, title: "home" },
-        { id: 1, title: "recipes" },
-        { id: 2, title: "about" },
+        { id: 0, title: "home", path: "" },
+        { id: 1, title: "recipes", path: "recipes" },
+        { id: 2, title: "about", path: "about" },
 
     ]
     const [isClosed, setClosed] = useState(true)
@@ -17,17 +17,16 @@ const NavBar = () => {
 
 
     return (
-        <div className="fixed z-5 [box-shadow:_0_4px_4px_rgb(0_0_0_/_40%)] text-dark">
+        <div className="fixed z-50 [box-shadow:_0_4px_4px_rgb(0_0_0_/_40%)] text-dark">
 
-            <nav className="fixed h-16 text-3xl pb-1 [box-shadow:_0_4px_4px_rgb(0_0_0_/_40%)] place-items-center inline-flex justify-between w-full">
+            <nav className="fixed h-16 text-3xl pb-1 [box-shadow:_0_4px_4px_rgb(0_0_0_/_40%)] bg-light place-items-center inline-flex justify-between w-full">
                 <div className="text-4lg font-bold active:scale-150 hover:text-mainGreen ease-in-out duration-300" ><a href="/">Receptor</a></div >
-                <div><input type="text" className="rounded-xl" /></div>
                 <div>
                     <ul className="inline-flex">
                         {navigation.map((item) => (<li className="hidden md:block 2xl:block active:scale-150 ml-2 mr-2 hover:text-mainGreen ease-in-out duration-300">
                             {location.pathname === '/' ?
 
-                                (<Link to={item.title}
+                                (<Link to={item.path}
                                 >
                                     <a href="/">{item.title}
                                     </a>
@@ -60,7 +59,7 @@ const NavBar = () => {
                     {navigation.map((item) => (<li className="active:scale-150 ml-2 mr-2 hover:text-mainGreen ease-in-out duration-300">
                         {location.pathname === '/' ?
 
-                            (<Link to={item.title}
+                            (<Link to={item.path}
                                 onClick={() => setClosed(!isClosed)}
                             >
                                 <a href="/">{item.title}

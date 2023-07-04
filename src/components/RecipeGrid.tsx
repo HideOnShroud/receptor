@@ -1,12 +1,14 @@
 import Recipe from "./Recipe";
 
 interface Props {
-    cols: number
+    cols: string
+    colsd: string
+    colst: string
 }
 
-const RecipeGrid = ({ cols }: Props) => {
+const RecipeGrid = ({ cols, colsd, colst }: Props) => {
     return (
-        <div className={`pl-10 pr-10 grid grid-cols-${cols} place-items-center gap-4`}>
+        <div className={`pl-10 pr-10 grid ${colsd} ${colst} ${cols} place-items-center gap-4`}>
             <Recipe />
             <Recipe />
             <Recipe />
